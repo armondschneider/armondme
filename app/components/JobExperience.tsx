@@ -14,22 +14,22 @@ export default function JobExperience({
   dateRange,
 }: JobExperienceProps) {
   return (
-    <div className="max-w-md mx-auto overflow-hidden">
-      {/* Image */}
-      <div className="relative w-full h-66">
+    <div className="w-full max-w-[600px] overflow-hidden">
+      {/* Image: same width as container */}
+      <div className="relative w-full h-[240px]">
         <Image
           src={imageSrc}
           alt={title}
           fill
-          className="object-cover rounded-lg"
+          className="object-cover rounded-2xl"
         />
       </div>
 
-      {/* Text Content */}
-      <div className="p-4 space-y-2">
-        <h2 className="text-md font-medium text-gray-900">{title}</h2>
-        <p className="text-md font-regular text-gray-900">{description}</p>
-        <p className="text-md font-regular text-gray-400">{dateRange}</p>
+      {/* Text Content: no extra left padding */}
+      <div className="mt-6 space-y-2">
+        <h2 className="text-sm font-medium text-gray-900">{title}</h2>
+        <p className="text-sm text-gray-900">{description}</p>
+        <p className="text-sm text-gray-400">{dateRange}</p>
       </div>
     </div>
   );

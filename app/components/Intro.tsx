@@ -1,50 +1,77 @@
-"use client"; // if you're using Next.js App Router
-
+"use client";
 import { useState } from "react";
+import JobExperience from "./JobExperience";
+import About from "./About";
 
 export default function Intro() {
   const [activeTab, setActiveTab] = useState("Experience");
-
   const tabs = ["Experience", "Explorations", "About"];
 
   return (
-    <section className="min-h-screen flex flex-col items-center p-8 space-y-8">
-      {/* Intro Text */}
-      <div className="max-w-2xl text-center space-y-4">
-        <h1 className="text-md font-semibold">Armond Schneider</h1>
-        <p>
-          I'm a product design engineer passionate about people and products.
-          Having started from anywhere but linear, I am fascinated by how other
-          people think, feel, and behave.
-        </p>
-        <p>
-          Currently at <a className="underline font-semibold">Paradox</a> designing career site solutions
-          that make applying to jobs seamless.
-        </p>
-        <p>
-          Also building <a className="underline font-semibold">Verse</a>, a camera app that uses AI to
-          generate poetry based on what it sees.
-        </p>
-      </div>
+    <section className="min-h-screen p-8">
+      {/* Wrap text and tabs together */}
+      <div className="max-w-2xl space-y-18">
+        {/* Intro Text */}
+        <div className="space-y-4">
+          <h1 className="text-md font-semibold">Armond Schneider</h1>
+          <p className="text-sm font-regular">
+            I'm a product design engineer passionate about people and products.
+            I design and build products that feel magical, yet simple and
+            intuitive. I obsess over the smallest details and I like to make
+            people feel something through my work.
+          </p>
+          <p className="text-sm font-regular">
+            Currently at <strong>Paradox</strong> designing career site
+            solutions that make applying to jobs seamless.
+          </p>
+          <p className="text-sm font-regular">
+            Also building <strong>Verse</strong>, a camera app that uses AI to
+            generate poetry based on what it sees.
+          </p>
+        </div>
 
-      {/* Pills */}
-      <div className="flex space-x-4">
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`px-4 py-3 rounded-2xl 
-              ${
-                activeTab === tab
-                  ? "bg-gray-200 text-black"
-                  : "bg-white text-gray-500 hover:bg-gray-100"
-              }`}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
+        {/* Tabs */}
+        <div className="flex space-x-4">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`text-sm font-regular px-4 py-3 rounded-2xl 
+                ${
+                  activeTab === tab
+                    ? "bg-gray-200 text-black"
+                    : "bg-white text-gray-500 hover:bg-gray-100"
+                }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
 
+        {/* Conditional Content based on active tab */}
+        {activeTab === "Experience" && (
+          <div className="mx-auto max-w-6xl mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <JobExperience
+              imageSrc="/images/paradox/ParadoxThumbnail.jpg"
+              title="Web UI Designer at Paradox"
+              description="Reimagined career site solutions that seamlessly integrate design with functionality."
+              dateRange="2024 - Present"
+            />
+            <JobExperience
+              imageSrc="/images/hause/hauseThumbnail.jpg"
+              title="UI Designer at Hause"
+              description="Focused on redefining how digital and physical art is showcased and sold..."
+              dateRange="2022 - 2023"
+            />
+          </div>
+        )}
+
+        {activeTab === "About" && (
+          <div className="grid-cols-1">
+            <About></About>
+          </div>
+        )}
+      </div>
     </section>
   );
 }
