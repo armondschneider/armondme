@@ -2,6 +2,7 @@
 import { useState } from "react";
 import JobExperience from "./JobExperience";
 import About from "./About";
+import Explorations from "./Explorations";
 
 export default function Intro() {
   const [activeTab, setActiveTab] = useState("Experience");
@@ -66,9 +67,15 @@ export default function Intro() {
           </div>
         )}
 
+        {activeTab === "Explorations" && (
+          <div className="mx-auto max-w-6xl mt-8 grid grid-cols-1">
+            <Explorations />
+          </div>
+        )}
+
         {activeTab === "About" && (
-          <div className="grid-cols-1">
-            <About></About>
+          <div className="mx-auto max-w-6xl mt-8 grid grid-cols-1">
+            <About />
           </div>
         )}
       </div>
