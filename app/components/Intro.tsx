@@ -3,6 +3,7 @@ import { useState } from "react";
 import JobExperience from "./JobExperience";
 import About from "./About";
 import Explorations from "./Explorations";
+import HoverEffect from "../modals/HoverEffect";
 
 export default function Intro() {
   const [activeTab, setActiveTab] = useState("Experience");
@@ -14,7 +15,15 @@ export default function Intro() {
       <div className="max-w-2xl space-y-18">
         {/* Intro Text */}
         <div className="space-y-4">
-          <h1 className="text-md font-semibold">Armond Schneider</h1>
+          <h1 className="text-md font-semibold">
+            <HoverEffect
+              text="Armond Schneider"
+              imageSrcs={[
+                "/images/explorations/armond1.jpg",
+                "/images/explorations/armond2.jpg",
+              ]}
+            />
+          </h1>
           <p className="text-sm font-regular">
             I'm a product design engineer passionate about people and products.
             I design and build products that feel magical, yet simple and
