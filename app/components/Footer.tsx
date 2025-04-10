@@ -4,8 +4,8 @@ import Location from "./Location";
 
 export default function Footer() {
   return (
-    <footer className="items-left text-left text-sm text-gray-500">
-      <div className="mx-auto max-w-6xl px-8">
+    <footer className="pb-8 pt-8 px-8 max-w-6xl mx-auto text-left text-sm text-gray-500">
+      <div>
         {/* socials */}
         <div className="mb-4 flex space-x-6 space-y-2 flex-wrap text-sm text-gray-500">
           <a
@@ -13,6 +13,7 @@ export default function Footer() {
             aria-label="Email"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-gray-900 hover:underline"
           >
             Email
           </a>
@@ -21,6 +22,7 @@ export default function Footer() {
             aria-label="LinkedIn"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-gray-900 hover:underline"
           >
             LinkedIn
           </a>
@@ -29,6 +31,7 @@ export default function Footer() {
             aria-label="X (formerly Twitter)"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-gray-900 hover:underline"
           >
             X
           </a>
@@ -37,6 +40,7 @@ export default function Footer() {
             aria-label="Threads"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-gray-900 hover:underline"
           >
             Threads
           </a>
