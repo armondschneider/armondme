@@ -59,10 +59,11 @@ const HoverEffect: React.FC<HoverEffectProps> = ({ text, imageSrcs }) => {
               stiffness: 200,
               damping: 20,
             }}
-            className="pointer-events-none w-32 h-auto rounded-xl shadow-xl/30"
+            className="pointer-events-none w-32 h-auto rounded-2xl shadow-2xl z-50"
             style={{
               position: "absolute",
               transformOrigin: "top left",
+              zIndex: 999,
             }}
           />
         )}

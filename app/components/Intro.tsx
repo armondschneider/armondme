@@ -4,6 +4,7 @@ import JobExperience from "./JobExperience";
 import About from "./About";
 import Explorations from "./Explorations";
 import HoverEffect from "../modals/HoverEffect";
+import LogoPopout from "../modals/LogoPopout";
 
 export default function Intro() {
   const [activeTab, setActiveTab] = useState("Experience");
@@ -31,8 +32,9 @@ export default function Intro() {
             people feel something through my work.
           </p>
           <p className="text-sm font-regular">
-            Currently at <strong>Paradox</strong> designing career site
-            solutions that make applying to jobs seamless.
+            Currently at <a href="https://paradox.ai" target="_blank" rel="noopener noreferrer" className="font-semibold underline">
+              <LogoPopout text="Paradox" logoSrc="/images/paradox/paradoxLogo.png" />
+            </a> designing career site solutions that make applying to jobs seamless.
           </p>
           <p className="text-sm font-regular">
             Also building <strong>Verse</strong>, a camera app that uses AI to
@@ -50,7 +52,7 @@ export default function Intro() {
                 ${
                   activeTab === tab
                     ? "bg-gray-200 text-black"
-                    : "bg-white text-gray-500 hover:bg-gray-100"
+                    : "bg-white text-gray-500 hover:bg-gray-100 hover:cursor-pointer"
                 }`}
             >
               {tab}
