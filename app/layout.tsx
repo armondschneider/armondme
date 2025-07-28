@@ -11,7 +11,29 @@ export const metadata: Metadata = {
   title: "armond schneider",
   description: "product design engineer",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
+  },
+  openGraph: {
+    title: "armond schneider",
+    description: "product design engineer",
+    url: "https://armond.me",
+    siteName: "armond schneider",
+    images: [
+      {
+        url: "/images/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "armond schneider - product design engineer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "armond schneider",
+    description: "product design engineer",
+    images: ["/images/og.jpg"],
   },
 };
 
